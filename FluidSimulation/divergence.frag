@@ -12,9 +12,9 @@ void main()
     vec2 C = texture(sTD2DInputs[0], vUV.xy).xy;
 
     if (pL.x < 0.0) {L = -C.x; }
-    if (pR.x < 1.0) {L = -C.x; }
-    if (pT.y < 1.0) {L = -C.y; }
-    if (pB.y < 0.0) {L = -C.y; }
+    if (pR.x > 1.0) {R = -C.x; }
+    if (pT.y > 1.0) {T = -C.y; }
+    if (pB.y < 0.0) {B = -C.y; }
 
     float divergence = .5 * (R - L + T - B);	// vec4 color = texture(sTD2DInputs[0], vUV.st);
 
